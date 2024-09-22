@@ -3,6 +3,7 @@ library(ggpmisc)
 library(ggpubr)
 library(gghalves)
 library(colourpicker)
+library(markdown)
 shinyUI(navbarPage(
   "ShinyScatterBoxDensity_ridges",
   tabPanel(

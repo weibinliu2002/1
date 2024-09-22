@@ -1,6 +1,6 @@
 library(ggplot2)
 library(ggpmisc)
-library(ggpubr)
+library(ggpmisc)
 library(gghalves)
 library(aplot)
 library(showtext)

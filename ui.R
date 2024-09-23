@@ -5,7 +5,7 @@ library(gghalves)
 library(colourpicker)
 library(markdown)
 shinyUI(navbarPage(
-  "ShinyScatterBoxDensity_ridges",
+  "ShinyScaBoxDen",
   tabPanel(
     "二维散点图结合箱图与密度脊线图",
     sidebarPanel(

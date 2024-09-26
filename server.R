@@ -28,7 +28,7 @@ server <- function(input, output, session) {
     sss6 <- input$sss6
     if (sss6 == T) {
       n1 <-
-        "theme(panel.border = element_rect(color = input$xx, size = input$xxx))"
+        "theme(panel.border = element_rect(color = input$xx, linewidth = input$xxx))"
     }
     if (sss6 == F) {
       n1 <-

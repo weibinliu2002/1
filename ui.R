@@ -10,7 +10,7 @@ shinyUI(navbarPage(
     "二维散点图结合箱图与密度脊线图",
     sidebarPanel(
       fileInput("file", label = "选择文件", accept = ".txt"),
-      downloadButton("Download", "Download example data"),
+      downloadButton("Download", "示例数据"),
       br(),
       br(),
       h3('图形参数'),
@@ -92,7 +92,7 @@ shinyUI(navbarPage(
                                  "ss1",
                                  label = "横坐标字体大小",
                                  min = 5,
-                                 max = 30,
+                                 max = 50,
                                  value = 20
                                ),
                                colourInput("d1", label = "横坐标字体颜色", value =
@@ -101,8 +101,8 @@ shinyUI(navbarPage(
                                  "ss3",
                                  label = "横标题字体大小",
                                  min = 5,
-                                 max = 55,
-                                 value = 20
+                                 max = 100,
+                                 value = 30
                                ),
                                colourInput("d2", label = "横标题字体颜色", value =
                                              "black"),
@@ -338,20 +338,18 @@ shinyUI(navbarPage(
       # checkboxInput("downloadratio", h4("图片下载大小"), FALSE),
       # conditionalPanel(condition = "input.downloadratio",
       h4("图片下载"),
-      numericInput("h", "Plot download height", value =
+      numericInput("h", "图形高度", value =
                      "600"),
-      numericInput("w", "Plot download width", value =
+      numericInput("w", "图形宽度", value =
                      "600"),
       # ) ,
       actionButton("action",
-                   label = "go")
+                   label = "提交")
     ) ,
     mainPanel(
-      downloadButton("downloadpdf", "Download pdf-file"),
-      downloadButton("downloadsvg", "Download svg-file"),
-      
-      plotOutput("p4", height = "600px", width = "600px"),
-      
+      downloadButton("downloadpdf", "PDF 下载"),
+      downloadButton("downloadsvg", "SVG下载"),
+      plotOutput("p4", height = "700px", width = "700px"),
     )
   ),
   tabPanel("Help", includeMarkdown("README.md"))

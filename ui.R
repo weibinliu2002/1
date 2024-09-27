@@ -174,7 +174,6 @@ shinyUI(navbarPage(
             value = 0.8
           )
         ),
-        
       ),
       conditionalPanel(
         condition = "input.select == '右部图形'",
@@ -349,7 +348,8 @@ shinyUI(navbarPage(
     mainPanel(
       downloadButton("downloadpdf", "PDF 下载"),
       downloadButton("downloadsvg", "SVG下载"),
-      plotOutput("p4", height = "700px", width = "700px"),
+      plotOutput("p4", #height = "700px", width = "700px"
+                 ),
     )
   ),
   tabPanel("Help", includeMarkdown("README.md"))

@@ -5,7 +5,6 @@ library(gghalves)
 library(aplot)
 library(showtext)
 library(markdown)
-
 server <- function(input, output, session) {
   ##定义好导入的字体
   # Font <- c('STKaiti.TTF', 'simhei.TTF') ##华文楷体;黑体;
@@ -33,9 +32,7 @@ server <- function(input, output, session) {
     if (sss6 == F) {
       n1 <-
         "theme(panel.border = element_rect(color = NA, size = 0),axis.line = element_line(color = 'black'),
-)
-"
-    }
+)"}
         output$p4 <- renderPlot({
       #自定义颜色
       col <- c(input$c1)
@@ -172,7 +169,7 @@ server <- function(input, output, session) {
       p4 <<- p1 %>% insert_top(p3, height = 0.4) %>%
         insert_right(p2, width = 0.4)
       p4
-    })
+    },height=input$h, width=input$w)
   })
 observe({
   ## *** Download PDF file ***
@@ -181,7 +178,6 @@ observe({
       paste("plot.pdf")},
     content <- function(file){
       pdf(file,height = input$h/72,width = input$w/72)
-      print(1)
       print(p4)
       dev.off()
     },contentType = "application/pdf"
